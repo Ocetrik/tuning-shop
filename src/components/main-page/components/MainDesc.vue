@@ -1,11 +1,11 @@
 <template>
 <!-- Описание компании -->
-  <div class="main-page__desc">
+  <div class="main-desc">
     <div class="desc-text">
       <div class="desc-text__title">URBAN <span>RACERS</span></div>
       <div class="desc-text__body">
         Интернет-магазин тюнинг-комплектующих для современных автомобилей Audi,
-        Skoda, Seat, Porsche, BMW, Mercedes-Benz и др.Мы предлагаем только
+        Skoda, Seat, Porsche, BMW, Mercedes-Benz и др. Мы предлагаем только
         лучшие товары из Европы и США. Работаем напрямую с заводами, тем самым
         гарантируя отличные цены и сроки доставки.
       </div>
@@ -20,7 +20,7 @@
 </template>
 
 <style scoped lang="scss">
-.main-page__desc {
+.main-desc {
   margin-top: 65px;
   display: flex;
   gap: 25px;
@@ -33,11 +33,13 @@ span {
   &__title {
     font-size: 60px;
     line-height: 73px;
+    font-family: "Montserrat-Bold";
   }
   &__body {
     margin-top: 40px;
     font-size: 24px;
     line-height: 38px;
+    font-family: "OpenSans-Regular";
   }
 }
 .desc-text__btn {

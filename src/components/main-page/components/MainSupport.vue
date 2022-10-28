@@ -1,6 +1,6 @@
 <template>
   <!-- Компонент связи с ТП -->
-  <div class="main-page__main-support">
+  <div class="main-support">
     <div class="main-support__content">
       <div class="content__title">Мы готовы ответить на все ваши вопросы!</div>
       <div class="content__form">
@@ -33,7 +33,7 @@ export default {};
 <style scoped lang="scss">
 .main-support {
   &__content {
-   padding: 50px 80px;
+   padding: 50px 70px;
     margin-top: 90px;
     display: flex;
     justify-content: center;
@@ -43,6 +43,7 @@ export default {};
 }
 .content {
   &__title {
+    font-family: 'Montserrat-Bold';
     font-size: 35px;
     line-height: 45px;
     max-width: 490px;
@@ -62,6 +63,7 @@ export default {};
   line-height: 20px;
   display: flex;
   gap: 10px;
+  font-family: "OpenSans-Semibold";
 }
 .input-field {
   &__email {

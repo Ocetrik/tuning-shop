@@ -5,20 +5,30 @@ import store from "./store";
 
 //Components
 
-import Header from "@/components/main-page/components/MainHeader.vue";
+import Header from "@/components/app/HeaderApp.vue";
+import Footer from "@/components/app/FooterApp.vue";
 import Desc from "@/components/main-page/components/MainDesc.vue";
 import Selection from "@/components/main-page/components/MainSelection.vue";
 import Support from "@/components/main-page/components/MainSupport.vue";
+import Categories from "@/components/main-page/components/MainCategories.vue";
+import News from "@/components/main-page/components/MainNews.vue";
 
 // UI
 
 import MySelect from "@/components/UI/MySelect.vue";
+import MyProduct from "@/components/UI/MyProduct.vue";
+import MyNews from "@/components/UI/MyNews.vue";
 
 const app = createApp(App).use(store).use(router);
 app
-  .component("my-header", Header)
+  .component("header-app", Header)
+  .component("footer-app", Footer)
   .component("main-desc", Desc)
   .component("main-selection", Selection)
   .component("main-support", Support)
-  .component("my-select", MySelect);
+  .component("main-categories", Categories)
+  .component("main-news", News)
+  .component("my-select", MySelect)
+  .component("my-product", MyProduct)
+  .component("my-news", MyNews);
 app.mount("#app");

@@ -1,5 +1,13 @@
 <template>
-  <div class="app"><router-view /></div>
+  <div class="app">
+    <div class="app-header">
+      <header-app />
+    </div>
+    <router-view />
+    <div class="app-footer">
+      <footer-app />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -7,13 +15,19 @@ export default {};
 </script>
 
 <style lang="scss">
+@import "@/assets/index.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
+
 // Стили кнопок
+
 .btn {
+  font-family: "OpenSans-Semibold";
   background: #f05454;
   border-radius: 4px;
   color: #ffffff;
