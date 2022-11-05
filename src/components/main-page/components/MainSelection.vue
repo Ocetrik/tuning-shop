@@ -9,8 +9,9 @@
       </div>
     </div>
     <div class="main-selection__selector">
-      <my-select v-model="selectedSort" :option="brandSelect" />
-
+      <my-select v-model="selectedBrand" :options="brandSelect" >Выберите марку автомобиля</my-select>
+      <my-select v-model="selectedModel" :options="modelSelect" >Выберите модель автомобиля</my-select>
+      <my-select v-model="selectedDetail" :options="detailSelect" >Выберите модификацию </my-select>
       <div class="selector-btn">
         <button class="btn">Подобрать</button>
       </div>
@@ -22,15 +23,23 @@
 export default {
   name: "MainSelection",
   data: () => ({
-    selectedSort: "",
+    selectedBrand: "",
+    selectedModel: "",
+    selectedDetail: "",
     brandSelect: [
-      { value: "brand", name: "Volkswagen" },
-      { value: "brand", name: "Skoda" },
-      { value: "brand", name: "Audi" },
+      { value: "brand", name: "Volkswagen", id: 1 },
+      { value: "brand", name: "Skoda", id: 2 },
+      { value: "brand", name: "Audi", id: 3 },
     ],
-    modelSelect: [{ value: "model", name: "A5" }],
+    modelSelect: [
+      { value: "model", name: "A5" },
+      { value: "model", name: "Tiguan" },
+    ],
 
-    detailSelect: [{ value: "detail", name: "Двигатель" }],
+    detailSelect: [
+      { value: "detail", name: "Двигатель" },
+      { value: "detail", name: "Аксессуары" },
+    ],
   }),
 };
 </script>
@@ -52,7 +61,7 @@ export default {
 }
 
 .btn {
-  padding: 15px 130px;
+  padding: 15px 133px;
 
   font-size: 16px;
   line-height: 22px;

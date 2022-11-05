@@ -22,6 +22,15 @@ export default {};
   margin: 0;
   padding: 0;
   text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+input, textarea, button, select {
+	font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: inherit
 }
 
 // Стили кнопок

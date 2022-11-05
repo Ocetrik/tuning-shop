@@ -37,24 +37,26 @@
       </div>
       <div class="nav__column">
         <div class="column__title">Для покупателей</div>
-        <div class="column__url">Доставка</div>
-        <div class="column__url">Оплата</div>
-        <div class="column__url">Возврат</div>
-        <div class="column__url">Партнеры</div>
-        <div class="column__url">Личный кабинет</div>
+        <router-link class="column__url" to="/">Доставка</router-link>
+        <router-link class="column__url" to="/">Оплата</router-link>
+        <router-link class="column__url" to="/">Возврат</router-link>
+        <router-link class="column__url" to="/">Партнеры</router-link>
+        <router-link class="column__url" to="/">Личный кабинет</router-link>
       </div>
       <div class="nav__column">
         <div class="column__title">Информация</div>
-        <div class="column__url">Статьи</div>
-        <div class="column__url">Видеообзоры</div>
-        <div class="column__url">Бренды</div>
-        <div class="column__url">Установочные центры</div>
+        <router-link class="column__url" to="/">Статьи</router-link>
+        <router-link class="column__url" to="/">Видеообзоры</router-link>
+        <router-link class="column__url" to="/">Бренды</router-link>
+        <router-link class="column__url" to="/">Установочные центры</router-link>
       </div>
       <div class="nav__column">
         <div class="column__title">Правила</div>
-        <div class="column__url">Пользовательское соглашение</div>
-        <div class="column__url">Cookie</div>
-        <div class="column__url">Правила оплаты</div>
+        <router-link class="column__url" to="/"
+          >Пользовательское соглашение</router-link
+        >
+        <router-link class="column__url" to="/">Cookie</router-link>
+        <router-link class="column__url" to="/">Правила оплаты</router-link>
       </div>
     </div>
   </div>

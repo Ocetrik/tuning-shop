@@ -1,35 +1,35 @@
 <template>
   <!-- router-link -->
-  <div v-for="news in ourNews" :key="news.id" class="news">
-    <div class="news__img">
-      <img :src="news.img" alt="" />
+  <div v-for="action in ourActions" :key="action.id" class="action">
+    <div class="action__img">
+      <img :src="action.img" alt="" />
     </div>
-    <div class="news__title">
-      {{ news.title }}
+    <div class="action__title">
+      {{ action.title }}
     </div>
-    <div class="news__body">
-      {{ news.body }}
+    <div class="action__body">
+      {{ action.body }}
     </div>
-    <div class="news__date">
-      {{ news.date }}
+    <div class="action__date">
+      {{ action.date }}
     </div>
-    <div class="news__category">Новости</div>
+    <div class="actions__category">Акции</div>
   </div>
 </template>
 
 <script>
-import { STATIC_NEWS } from "@/data/STATIC_NEWS.js";
+import { STATIC_ACTIONS } from "@/data/STATIC_ACTIONS.js";
 
 export default {
   data: () => ({
-    ourNews: STATIC_NEWS,
+    ourActions: STATIC_ACTIONS,
   }),
-  components: STATIC_NEWS,
+  components: STATIC_ACTIONS,
 };
 </script>
 
 <style scoped lang="scss">
-.news {
+.action {
   padding: 18px;
   box-shadow: 0px 28px 104px rgba(41, 41, 41, 0.15);
   border-radius: 4px;

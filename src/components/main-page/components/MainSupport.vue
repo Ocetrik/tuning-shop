@@ -7,19 +7,19 @@
         <div class="form__input-field">
           <div class="input-field__email">
             <div class="email__title">Email</div>
-            <div class="email__input">
+            <div class="email__input input">
               <input placeholder="Введите email" type="text" />
             </div>
           </div>
           <div class="input-field__phone">
             <div class="phone__title">Телефон</div>
-            <div class="phone__input">
+            <div class="phone__input input">
               <input placeholder="Введите телефон" type="text" />
             </div>
           </div>
         </div>
       </div>
-      <div class="">
+      <div class="btn-wrapper">
         <button class="content__btn btn">Задать вопрос</button>
       </div>
     </div>
@@ -33,29 +33,28 @@ export default {};
 <style scoped lang="scss">
 .main-support {
   &__content {
-   padding: 50px 70px;
+    padding: 50px 70px;
     margin-top: 90px;
     display: flex;
     justify-content: center;
-    box-shadow: 0px 2px 52px rgba(0, 0, 0, 0.1),
-    0px 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 52px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.3);
   }
 }
 .content {
   &__title {
-    font-family: 'Montserrat-Bold';
+    font-family: "Montserrat-Bold";
     font-size: 35px;
     line-height: 45px;
     max-width: 490px;
   }
   &__btn {
-   padding: 18px 30px;
+    padding: 18px 30px;
     font-size: 16px;
     line-height: 25px;
     margin-left: 80px;
     margin-top: 15px;
     box-shadow: 0px 0px 32px rgba(252, 10, 10, 0.4),
-    0px 2px 3px rgba(232, 6, 6, 3);;
+      0px 2px 3px rgba(232, 6, 6, 3);
   }
 }
 .form__input-field {
@@ -84,5 +83,17 @@ export default {};
 .phone__input input {
   padding: 11px;
   padding-right: 200px;
+}
+.input input {
+  font-family: "OpenSans-Regular";
+  font-size: 14px;
+  line-height: 19px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  width: 355px;
+  padding: 15px 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 </style>

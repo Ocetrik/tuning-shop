@@ -1,5 +1,5 @@
 <template>
-<!-- Описание компании -->
+  <!-- Описание компании -->
   <div class="main-desc">
     <div class="desc-text">
       <div class="desc-text__title">URBAN <span>RACERS</span></div>
@@ -10,14 +10,45 @@
         гарантируя отличные цены и сроки доставки.
       </div>
       <div class="">
-        <button class="desc-text__btn btn">Перейти в каталог</button>
+        <button class="desc-text__btn btn">Перейти в каталог
+        </button>
       </div>
     </div>
     <div class="desc-slider">
-      <img src="@/static/slider-item.png" alt="" />
+      <splide :options="options">
+        <splide-slide>
+          <img src="@/static/slider-item-1.png" />
+        </splide-slide>
+        <splide-slide>
+          <img src="@/static/slider-item-2.png" />
+        </splide-slide>
+        <splide-slide>
+          <img src="@/static/slider-item-3.png" />
+        </splide-slide>
+      </splide>
     </div>
   </div>
 </template>
+
+<script>
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import { defineComponent } from "vue";
+import "@splidejs/vue-splide/css";
+
+export default defineComponent({
+  data: () => ({
+    options: {
+      type: "loop",
+      rewind: true,
+      autoplay: 0.1,
+      width: "60rem",
+      padding: "5rem",
+      gap: "6rem",
+    },
+  }),
+  components: { Splide, SplideSlide },
+});
+</script>
 
 <style scoped lang="scss">
 .main-desc {

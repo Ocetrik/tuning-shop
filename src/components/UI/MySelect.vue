@@ -1,33 +1,42 @@
 <template>
-  <div class="sort-product">
-    <select v-model="modelValue" @change="changeOption">
-      <option selected value="">По умолчанию</option>
-      <option
-        v-for="option in options"
-        :key="option.value"
-        :value="option.value"
-      >
+  <div class="select">
+    <select v-model="inputModel" >
+      <option value="" disabled>
+        <slot></slot>
+      </option>
+      <option v-for="option in options" :key="option.id" :value="option.value">
         {{ option.name }}
       </option>
+      <img src="@/static/arrow.svg" alt="">
     </select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MySelect",
+  name: "my-select",
   props: {
     modelValue: {
       type: String,
     },
     options: {
       type: Array,
-      default: () => [],
+      default: () => [""],
     },
   },
   methods: {
-    changeOption(event) {
-      this.$emit("update:modelValue", event.target.value);
+    // changeOption(event) {
+      // this.$emit("update:modelValue", event.target.value);
+    // },
+  },
+  computed: {
+    inputModel: {
+      get() {
+        return this.modelValue;
+      },
+      set(value) {
+        this.$emit("update:modelValue", value);
+      },
     },
   },
 };
@@ -40,6 +49,18 @@ export default {
   line-height: 19px;
   border: 0.8px solid #d9d9d9;
   border-radius: 2px;
-  padding: 11px 113px 11px 15px;
+  width: 355px;
+  padding: 15px 15px;
+  background: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+select:hover {
+  box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.04),
+    0px 0px 12px rgba(0, 0, 0, 0.04);
+}
+select::after {
+  background-image: url("@/static/arrow.svg")
 }
 </style>
