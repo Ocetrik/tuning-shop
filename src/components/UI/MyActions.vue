@@ -1,6 +1,7 @@
 <template>
   <!-- router-link -->
-  <div v-for="action in ourActions" :key="action.id" class="action">
+  <!-- v-for="action in ourActions" :key="action.id" -->
+  <div  class="action">
     <div class="action__img">
       <img :src="action.img" alt="" />
     </div>
@@ -18,13 +19,17 @@
 </template>
 
 <script>
-import { STATIC_ACTIONS } from "@/data/STATIC_ACTIONS.js";
 
 export default {
   data: () => ({
-    ourActions: STATIC_ACTIONS,
   }),
-  components: STATIC_ACTIONS,
+  components: {},
+  props: {
+    action: {
+      type: Object,
+      default: () => {},
+    },
+  },
 };
 </script>
 

@@ -10,8 +10,7 @@
         гарантируя отличные цены и сроки доставки.
       </div>
       <div class="">
-        <button class="desc-text__btn btn">Перейти в каталог
-        </button>
+        <button class="desc-text__btn btn">Перейти в каталог</button>
       </div>
     </div>
     <div class="desc-slider">

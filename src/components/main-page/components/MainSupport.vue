@@ -1,7 +1,7 @@
 <template>
   <!-- Компонент связи с ТП -->
   <div class="main-support">
-    <div class="main-support__content">
+    <div ref="slaid-1" class="main-support__content">
       <div class="content__title">Мы готовы ответить на все ваши вопросы!</div>
       <div class="content__form">
         <div class="form__input-field">

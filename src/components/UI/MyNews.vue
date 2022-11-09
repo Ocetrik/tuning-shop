@@ -1,6 +1,6 @@
 <template>
   <!-- router-link -->
-  <div v-for="news in ourNews" :key="news.id" class="news">
+  <div class="news">
     <div class="news__img">
       <img :src="news.img" alt="" />
     </div>

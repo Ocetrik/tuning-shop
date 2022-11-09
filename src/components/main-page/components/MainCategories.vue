@@ -3,25 +3,26 @@
     <div class="main-categories__info">
       <div class="info__text">
         <div class="text__title">Категории товаров</div>
-        <div class="text__body">
+        <div  class="text__body">
           Выберите категорию которая вас интересует. Тут есть все – от ГБЦ до
           футболки с логотипом Ауди.
         </div>
       </div>
       <div class="info__navigation">
         <!-- Сделать router-link вместо div -->
-        <div class="navigation__catalog navigation">
+        <router-link to="/catalog" class="navigation__catalog navigation">
           <div class="catalog__title title">Показать все товары</div>
           <div class="catalog__link link">
             Перейти в каталог <img src="@/static/arrow.svg" alt="" />
           </div>
-        </div>
-        <div class="navigation__support navigation">
+        </router-link>
+        <!-- Нужно передать реф с support в этот компонент и сделать прокрутку до support -->
+        <router-link to="/" class="navigation__support navigation">
           <div class="support__title title">Не знаете что выбрать?</div>
           <div class="support__link link">
             Получить консультацию <img src="@/static/arrow.svg" alt="" />
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
     <div class="main-categories__products">
@@ -31,7 +32,8 @@
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>
 
 <style scoped lang="scss">
@@ -58,13 +60,22 @@ export default {};
   }
 }
 .navigation {
-  // ??????????????????? styles
+  color: #000000;
+  font-family: "Montserrat-Bold";
   padding: 25px;
   padding-right: 0;
-  box-shadow: 0px 28px 104px rgba(207, 28, 28, 0.15);
   border-radius: 4px;
   border: 1px solid #000000;
-  background: #f5f5f5;
+  background: #e5e5e5;
+  transition: all 0.5s ease 0s;
+}
+.navigation__catalog:hover {
+  background: #ffffff;
+  border-radius: 15px;
+}
+.navigation__support:hover {
+  background: #ffffff;
+  border-radius: 15px;
 }
 .text {
   &__title {
