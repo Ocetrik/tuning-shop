@@ -9,7 +9,6 @@
         </div>
       </div>
       <div class="info__navigation">
-        <!-- Сделать router-link вместо div -->
         <router-link to="/catalog" class="navigation__catalog navigation">
           <div class="catalog__title title">Показать все товары</div>
           <div class="catalog__link link">

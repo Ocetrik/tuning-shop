@@ -71,7 +71,6 @@ export default defineComponent({
     ourActions: STATIC_ACTIONS,
     ourNews: STATIC_NEWS,
     options: {
-      autoplay: 0.1,
       perPage: 4,
       arrows: false,
       pagination: false,

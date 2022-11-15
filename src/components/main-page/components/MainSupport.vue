@@ -8,26 +8,71 @@
           <div class="input-field__email">
             <div class="email__title">Email</div>
             <div class="email__input input">
-              <input placeholder="Введите email" type="text" />
+              <input
+                v-model="state.email"
+                placeholder="Введите email"
+                type="text"
+              />
+              <div v-if="v$.email.$error">
+                {{ v$.email.$errors[0].$message }}
+              </div>
             </div>
           </div>
           <div class="input-field__phone">
             <div class="phone__title">Телефон</div>
             <div class="phone__input input">
-              <input placeholder="Введите телефон" type="text" />
+              <input
+                v-model="state.phone"
+                placeholder="Введите телефон"
+                type="number"
+              />
+              <div v-if="v$.phone.$error">
+                {{ v$.phone.$errors[0].$message }}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="btn-wrapper">
-        <button class="content__btn btn">Задать вопрос</button>
+        <button @click="submitForm" class="content__btn btn">
+          Задать вопрос
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import useValidate from "@vuelidate/core";
+import { required, email, minLength, numeric } from "@vuelidate/validators";
+import { reactive, computed } from "vue";
+
+export default {
+  setup() {
+    const state = reactive({
+      email: "",
+      phone: "",
+    });
+    const rules = computed(() => {
+      return {
+        email: { required, email, minLength: minLength(6) },
+        phone: { required, numeric, minLength: minLength(6) },
+      };
+    });
+    const v$ = useValidate(rules, state);
+    return { state, v$ };
+  },
+  methods: {
+    submitForm() {
+      this.v$.$validate();
+      if (!this.v$.$error) {
+        console.log("succ");
+      } else {
+        console.log("fail");
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -63,6 +108,9 @@ export default {};
   display: flex;
   gap: 10px;
   font-family: "OpenSans-Semibold";
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .input-field {
   &__email {
