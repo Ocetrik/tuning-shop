@@ -1,13 +1,13 @@
 <template>
   <div class="select">
-    <select v-model="inputModel" >
+    <select v-model="inputModel">
       <option value="" disabled>
         <slot></slot>
       </option>
       <option v-for="option in options" :key="option.id" :value="option.value">
         {{ option.name }}
       </option>
-      <img src="@/static/arrow.svg" alt="">
+      <img src="@/static/gray-arrow.svg" alt="" />
     </select>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     // changeOption(event) {
-      // this.$emit("update:modelValue", event.target.value);
+    // this.$emit("update:modelValue", event.target.value);
     // },
   },
   computed: {
@@ -61,6 +61,6 @@ select:hover {
     0px 0px 12px rgba(0, 0, 0, 0.04);
 }
 select::after {
-  background-image: url("@/static/arrow.svg")
+  background-image: url("@/static/gray-arrow.svg");
 }
 </style>

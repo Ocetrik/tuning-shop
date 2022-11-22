@@ -30,7 +30,11 @@ input, textarea, button, select {
     font-size: inherit;
     color: inherit;
     background-color: transparent;
-    border: inherit
+    border: inherit;
+}
+
+a {
+  color: #000000;
 }
 
 // Стили кнопок

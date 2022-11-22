@@ -10,7 +10,9 @@
         гарантируя отличные цены и сроки доставки.
       </div>
       <div class="">
-        <button class="desc-text__btn btn">Перейти в каталог</button>
+        <router-link to="/catalog">
+          <button class="desc-text__btn btn">Перейти в каталог</button>
+        </router-link>
       </div>
     </div>
     <div class="desc-slider">
@@ -77,5 +79,8 @@ span {
   font-size: 16px;
   line-height: 22px;
   padding: 15px 100px;
+}
+a {
+  color: #ffffff;
 }
 </style>

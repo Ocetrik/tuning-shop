@@ -9,12 +9,17 @@
             <div class="email__title">Email</div>
             <div class="email__input input">
               <input
-                v-model="state.email"
+                v-model.trim="state.email"
                 placeholder="Введите email"
                 type="text"
+                :class="v$.email.$error ? 'invalid' : ''"
               />
-              <div v-if="v$.email.$error">
-                {{ v$.email.$errors[0].$message }}
+              <div
+                class="input-errors"
+                v-for="error of v$.email.$errors"
+                :key="error.$uid"
+              >
+                <div class="error-msg">Email введен неверно</div>
               </div>
             </div>
           </div>
@@ -22,12 +27,17 @@
             <div class="phone__title">Телефон</div>
             <div class="phone__input input">
               <input
-                v-model="state.phone"
+                v-model.trim="state.phone"
                 placeholder="Введите телефон"
                 type="number"
+                :class="v$.email.$error ? 'invalid' : ''"
               />
-              <div v-if="v$.phone.$error">
-                {{ v$.phone.$errors[0].$message }}
+              <div
+                class="input-errors"
+                v-for="error of v$.phone.$errors"
+                :key="error.$uid"
+              >
+                <div class="error-msg">Номер введен неверно</div>
               </div>
             </div>
           </div>
@@ -55,8 +65,8 @@ export default {
     });
     const rules = computed(() => {
       return {
-        email: { required, email, minLength: minLength(6) },
-        phone: { required, numeric, minLength: minLength(6) },
+        email: { required, email },
+        phone: { required, numeric, minLength: minLength(11) },
       };
     });
     const v$ = useValidate(rules, state);
@@ -65,13 +75,13 @@ export default {
   methods: {
     submitForm() {
       this.v$.$validate();
-      if (!this.v$.$error) {
-        console.log("succ");
-      } else {
-        console.log("fail");
+      if (this.v$.$invalid) {
+        this.v$.$touch();
+        return;
       }
     },
   },
+  computed: {},
 };
 </script>
 
@@ -143,5 +153,15 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+.error-msg {
+  position: absolute;
+  font-family: "OpenSans-Regular";
+  font-size: 12px;
+  line-height: 22px;
+  color: #ff3654;
+}
+.invalid input{
+  border: 1px solid #ff3654
 }
 </style>

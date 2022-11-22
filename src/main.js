@@ -20,6 +20,8 @@ import MySelect from "@/components/UI/MySelect.vue";
 import MyProduct from "@/components/UI/MyProduct.vue";
 import MyNews from "@/components/UI/MyNews.vue";
 import MyActions from "@/components/UI/MyActions.vue";
+import MyDropList from "@/components/UI/MyDropList.vue";
+
 
 
 const app = createApp(App).use(store).use(router);
@@ -35,4 +37,5 @@ app
   .component("my-product", MyProduct)
   .component("my-news", MyNews)
   .component("my-actions", MyActions)
+  .component("my-drop", MyDropList)
 app.mount("#app");

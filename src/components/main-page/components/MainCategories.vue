@@ -12,14 +12,14 @@
         <router-link to="/catalog" class="navigation__catalog navigation">
           <div class="catalog__title title">Показать все товары</div>
           <div class="catalog__link link">
-            Перейти в каталог <img src="@/static/arrow.svg" alt="" />
+            Перейти в каталог <img src="@/static/orange-arrow.svg" alt="" />
           </div>
         </router-link>
         <!-- Нужно передать реф с support в этот компонент и сделать прокрутку до support -->
         <router-link to="/" class="navigation__support navigation">
           <div class="support__title title">Не знаете что выбрать?</div>
           <div class="support__link link">
-            Получить консультацию <img src="@/static/arrow.svg" alt="" />
+            Получить консультацию <img src="@/static/orange-arrow.svg" alt="" />
           </div>
         </router-link>
       </div>

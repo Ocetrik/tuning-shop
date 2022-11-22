@@ -21,7 +21,7 @@
     </div>
     <!-- Сделать чтобы все грузилось из отдельного компонента -->
     <splide :options="options">
-      <splide-slide v-for="action in ourActions" :key="action.id">
+      <splide-slide :class="isOpenActions ? 'actions-active': 'actions-disable'" v-for="action in ourActions" :key="action.id">
         <div class="action">
           <div class="action__img">
             <img :src="action.img" alt="" />
@@ -38,7 +38,7 @@
           <div class="actions__category">Акции</div>
         </div>
       </splide-slide>
-      <splide-slide v-for="news in ourNews" :key="news.id">
+      <splide-slide :class="isOpenNews ? 'news-active': 'news-disable'" v-for="news in ourNews" :key="news.id">
         <div class="news">
           <div class="news__img">
             <img :src="news.img" alt="" />
@@ -79,7 +79,7 @@ export default defineComponent({
     },
     isOpenActions: true,
     isOpenNews: true,
-    selectedSection: "",
+    selectedSection: "Все",
     selectionItems: ["Все", "Новости", "Акции"],
   }),
   components: { Splide, SplideSlide },
@@ -106,6 +106,12 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.news-disable {
+  display: none;
+}
+.actions-disable {
+  display: none;
+}
 .news {
   padding: 18px;
   box-shadow: 0px 28px 104px rgba(41, 41, 41, 0.15);
@@ -160,7 +166,7 @@ export default defineComponent({
 }
 .main-posts {
   margin-top: 60px;
-  margin-bottom: 190px;
+  margin-bottom: 160px;
   &__posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
