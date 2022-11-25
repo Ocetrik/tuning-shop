@@ -57,6 +57,7 @@ import useValidate from "@vuelidate/core";
 import { required, email, minLength, numeric } from "@vuelidate/validators";
 import { reactive, computed } from "vue";
 
+
 export default {
   setup() {
     const state = reactive({

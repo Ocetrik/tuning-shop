@@ -22,8 +22,6 @@ import MyNews from "@/components/UI/MyNews.vue";
 import MyActions from "@/components/UI/MyActions.vue";
 import MyDropList from "@/components/UI/MyDropList.vue";
 
-
-
 const app = createApp(App).use(store).use(router);
 app
   .component("header-app", Header)
