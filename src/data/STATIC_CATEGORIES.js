@@ -1,4 +1,4 @@
-export const STATIC_PRODUCT = [
+export const STATIC_CATEGORIES = [
    {
       img: require("@/static/categories/turbo.png"),
       title: "Трубины и турбокомплекты",
@@ -36,7 +36,7 @@ export const STATIC_PRODUCT = [
    },
    {
       img: require("@/static/categories/fuel.png"),
-      title: "Топливные системы",
+      title: "Топливная система",
       id: 8
    },
    {
@@ -56,7 +56,7 @@ export const STATIC_PRODUCT = [
    },
    {
       img: require("@/static/categories/intake.png"),
-      title: "Впускные системы",
+      title: "Впускная система",
       id: 12
    },
 ]

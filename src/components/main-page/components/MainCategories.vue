@@ -15,8 +15,7 @@
             Перейти в каталог <img src="@/static/orange-arrow.svg" alt="" />
           </div>
         </router-link>
-        <!-- Нужно передать реф с support в этот компонент и сделать прокрутку до support -->
-        <router-link to="/" class="navigation__support navigation">
+        <router-link to="/support" class="navigation__support navigation">
           <div class="support__title title">Не знаете что выбрать?</div>
           <div class="support__link link">
             Получить консультацию <img src="@/static/orange-arrow.svg" alt="" />
@@ -24,8 +23,8 @@
         </router-link>
       </div>
     </div>
-    <div class="main-categories__products">
-      <my-product />
+    <div class="main-categories__categories">
+      <my-categories-card />
     </div>
   </div>
 </template>
@@ -44,7 +43,7 @@ export default {
   &__info {
     max-width: 570px;
   }
-  &__products {
+  &__categories {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
