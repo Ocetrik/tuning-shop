@@ -24,6 +24,11 @@ import MyDropDown from "@/components/UI/MyDropDown.vue";
 // Products
 
 import CarProducts from "@/components/catalog-page/components/CarProducts.vue";
+import ProductFilter from "@/components/catalog-page/components/ProductFilter.vue";
+
+// Vuex
+
+// import productModule from "@/store/productModule.js";
 
 const app = createApp(App).use(store).use(router);
 app
@@ -40,5 +45,7 @@ app
   .component("my-actions-card", MyActionsCard)
   .component("my-drop", MyDropDown)
   .component("car-products", CarProducts)
+  .component("product-filter", ProductFilter)
+  // .component("product-module", productModule)
   ;
 app.mount("#app");

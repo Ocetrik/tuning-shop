@@ -2,7 +2,9 @@
   <div class="catalog-page">
     <div class="catalog-page__title">Каталог запчатей</div>
     <div class="catalog-page__product-list">
-      <div class="product-list__filter"></div>
+      <div class="product-list__filter">
+        <product-filter />
+      </div>
       <div class="product-list__products">
         <car-products />
       </div>
@@ -14,8 +16,6 @@
 export default {
   name: "CatalogPage",
   data: () => ({}),
-  computed: {},
-  methods: {},
 };
 </script>
 
@@ -28,6 +28,10 @@ export default {
     font-size: 35px;
     line-height: 22px;
     font-family: "Montserrat-Bold";
+  }
+  &__product-list {
+    display: flex;
+    gap: 100px;
   }
 }
 </style>
